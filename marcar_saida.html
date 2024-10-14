@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Saída</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        input, select {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            color: #32cd32; /* Verde para mensagem de sucesso */
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha o Dia e Horário</h1>
+        <form id="scheduleForm" onsubmit="return confirmSchedule(event)">
+            <label for="date">Data:</label>
+            <input type="date" id="date" required><br>
+            <label for="time">Horário:</label>
+            <input type="time" id="time" required><br>
+            <button type="submit">Confirmar Saída</button>
+        </form>
+        <p id="successMessage">Data marcada com sucesso!</p>
+    </div>
+
+    <script>
+        function confirmSchedule(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            document.getElementById('successMessage').style.display = 'block'; // Exibe a mensagem de sucesso
+            setTimeout(function() {
+                window.location.href = 'index.html'; // Retorna para a página inicial após 3 segundos
+            }, 3000); // 3 segundos
+        }
+    </script>
+</body>
+</html>

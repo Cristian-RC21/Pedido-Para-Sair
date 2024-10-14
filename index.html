@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para Sair</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oi, Lívia Maria Fernandes da Silva!</h1>
+        <p>Eu estava pensando... que tal sairmos para um café ou um filme?</p>
+        <p>Seria ótimo passar um tempo juntos!</p>
+        <div id="responseButtons">
+            <button id="yesButton" onclick="accept()">Sim</button>
+            <button id="noButton" onclick="decline()">Não</button>
+        </div>
+        <p id="thankYouMessage" class="hidden">Não Tem Como Recusar. 😊</p>
+    </div>
+
+    <script>
+        function accept() {
+            window.location.href = 'marcar_saida.html'; // Redireciona para a página de agendamento
+        }
+
+        function decline() {
+            document.getElementById('noButton').classList.add('hidden'); // Oculta o botão "Não"
+            document.getElementById('thankYouMessage').classList.remove('hidden'); // Exibe a mensagem de agradecimento
+        }
+    </script>
+</body>
+</html>
+
+
